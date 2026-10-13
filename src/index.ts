@@ -1,7 +1,8 @@
 import { serve } from '@hono/node-server'
 import app from './app.ts'
+import { env } from './data/env.ts'
 
-const server = serve({...app, port: 3000}, (info) => {
+const server = serve({...app, port: env.PORT}, (info) => {
   console.log(`Server is up and running on http://localhost:${info.port}`)
 })
 
